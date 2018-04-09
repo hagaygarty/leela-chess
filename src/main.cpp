@@ -153,8 +153,7 @@ static std::string parse_commandline(int argc, char *argv[]) {
     if (vm.count("weights")) {
         cfg_weightsfile = vm["weights"].as<std::string>();
     } else if (cfg_supervise.empty()) {
-        myprintf("A network weights file is required to use the program.\n");
-        exit(EXIT_FAILURE);
+        myprintf("Using default weights file %s\n", cfg_weightsfile.c_str());
     }
 
     if (vm.count("threads")) {
